@@ -1,4 +1,4 @@
-PreviewController = ["$scope", "$rootScope", function($scope, $rootScope) {
+PreviewController = ["$scope", "$rootScope", "$sce", function($scope, $rootScope, $sce) {
   $scope.$element = $('#preview');
   var mdConverter = new Showdown.converter();
 
@@ -9,7 +9,11 @@ PreviewController = ["$scope", "$rootScope", function($scope, $rootScope) {
   var updatePreview = function(rawText) {
     $scope.preview = mdToHTML(rawText);
   }
-  
+
+  $scope.previewHtml = function() {
+    return $sce.trustAsHtml($scope.preview);
+  }
+
   $scope.$element.click(function() {
     $scope.$emit('hideMenu');
   });

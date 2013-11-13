@@ -3,12 +3,12 @@
         <tr ng-class-odd="'odd'" ng-class-even="'even'" ng-repeat="file in changed()">
           <td ng-click="$emit('fileSelected', {path: file})">
             <a href="#">
-              <span class="glyphicon glyphicon-file"></span>
+              <%= fa_icon('file') %> 
             </a>
           </td>
           <td ng-click="$emit('remove', file)">
             <a href="#">
-              <span class="glyphicon glyphicon-remove-circle"></span>
+              <%= fa_icon('times-circle') %> 
             </a>
           </td>
           <td ng-click="$emit('fileSelected', {path: file})">

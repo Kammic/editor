@@ -7,7 +7,9 @@
             <table class='file-list table table-striped table-condensed'>
               <tr ng-class-odd="'odd'" ng-class-even="'even'" ng-click="$emit('parentSelected')" ng-show="currentPath.length > 0">
                 <td>
-                  <a href="#"><span class="glyphicon glyphicon-chevron-up"></span></a>
+                  <a href="#">
+                    <%= fa_icon('arrow-circle-o-up') %> 
+                  </a>
                 </td>
                 <td>
                   <a href="#">..</a>
@@ -16,14 +18,18 @@
               </tr>
               <tr ng-class-odd="'odd'" ng-class-even="'even'" ng-repeat="file in files">
                 <td ng-show="file.type == 'file'" ng-click="$emit('fileSelected', file)">
-                  <a href="#"><span class="glyphicon glyphicon-file"></span></a>
+                  <a href="#">
+                    <%= fa_icon('file') %> 
+                  </a>
                 </td>
                 <td ng-show="file.type == 'dir'" ng-click="$emit('dirSelected', file)">
-                  <a href="#"><span class="glyphicon glyphicon-folder-close"></span></a>
+                  <a href="#">
+                    <%= fa_icon('folder') %> 
+                  </a>
                 </td>
                 <td ng-click="$emit('deleteFile', file.path)">
                   <a href="#">
-                    <span class="glyphicon glyphicon-remove-circle"></span>
+                    <%= fa_icon('times-circle') %> 
                   </a>
                 </td>
                 <td ng-show="file.type == 'file'" ng-click="$emit('fileSelected', file)">

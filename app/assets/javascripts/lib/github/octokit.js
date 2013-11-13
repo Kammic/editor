@@ -820,7 +820,7 @@
             };
             this.contents = function(branch, path) {
               qs = toQueryString({ref: branch, path: path});
-              return _request('GET', "" + this.repoPath + "/contents" + qs);
+              return _request('GET', "" + this.repoPath + "/contents/" + path + qs);
             };
             this.fork = function() {
               return _request('POST', "" + this.repoPath + "/forks", null);
