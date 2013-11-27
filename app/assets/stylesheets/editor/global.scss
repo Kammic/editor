@@ -1,8 +1,11 @@
 @import 'font-awesome';
-@import url(//fonts.googleapis.com/css?family=Source+Code+Pro:300,400);
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+@import url(//fonts.googleapis.com/css?family=Droid+Sans+Mono);
 body {
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: 'Droid Sans Mono', sans-serif;
 }
 
 #editor, #preview {
@@ -19,20 +22,20 @@ body {
 
   font-size: .85em;
   line-height: 1.4em;
-  font-family: 'Droid Sans Mono', sans-serif;
-  font-weight:300;
 }
 
 #preview  {
-  overflow: auto;
-  position:absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  width:50%;
+  height:100%;
 
-  top:0;
-  right: 0; 
+  top: 0;
+  right: 0;
 
   padding-left: 1.7em;
-  padding-right: .7em;
-  width:50%;
+  padding-right: 1.7em;
   border-left: 1px solid #cfcfcf;
 
   p {
@@ -49,17 +52,6 @@ body {
 }
 
 #history {
-  .media.odd { background-color: rgb(238, 238, 238); }
-  .media {
-    border-top: 1px solid #dddddd;
-    margin-top: 0;
-    .media-body { margin-top: 2em; }
-    .media-object { margin-top: 3em; }
-    .message { font-weight: bold; }
-    p {
-      margin-bottom: 0.5em;
-    }
-  }
 }
 
 #browser {
@@ -75,7 +67,7 @@ body {
 }
 
 .nav-bar {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   padding:0;
@@ -90,7 +82,7 @@ body {
   .status {
     padding: .5em;
     float: right;
-    .btn {
+    .button {
       margin:0;
       .avatar {
         width: 18px;
@@ -103,15 +95,15 @@ body {
 }
 
 .nav-bar:hover { opacity: 1; }
+
 #menu-panel {
-  font: 13px Helvetica, arial, freesans, clean, sans-serif;
   right: 0;
   width: 25%;
   height: 100%;
   display: none;
-  position: absolute;
+  position: fixed;
   overflow: auto;
-  z-index: 5;  
+  z-index: 5;
   background-color: #fff;
   padding: 0.2em;
 
