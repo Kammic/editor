@@ -23,17 +23,17 @@ describe('controller: ApplicationController', function() {
       it('shows notifications when notify is emitted', function(){
         this.scope.$emit('notify', 'some message');
         waitsFor(function(){
-          return $('.bootstrap-growl').length > 0
+          return $('.growl-message').length > 0
         }, 100);
       });
 
       it('shows the correct message', function(){
         this.scope.$emit('notify', 'my_message');
         waitsFor(function(){
-          return $('.bootstrap-growl').length > 0
+          return $('.growl-message').length > 0
         }, 100);
 
-        expect($('.bootstrap-growl').text()).toMatch(/my_message/);
+        expect($('.growl-message').text()).toMatch(/my_message/);
       });
     });
 

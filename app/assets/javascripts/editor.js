@@ -22,3 +22,5 @@
 //= require ./lib/angular/angular.min
 //= require ./lib/angular/angular-sanitize.min
 //= require_tree ./editor
+
+//= require ./lib/jquery/jquery.growl
