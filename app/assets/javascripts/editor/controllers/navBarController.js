@@ -13,7 +13,6 @@ NavBarController = ["$scope", "$rootScope", "github", function($scope, $rootScop
     }
   }
 
-
   $scope.updateUser = function() {
     $scope.user   = github.getUser();
     $scope.avatar = $scope.user.avatar_url;

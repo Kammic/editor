@@ -1,3 +1,6 @@
+//= require jquery
+//= require jquery_ujs
+
 //= require ./lib/github/underscore
 //= require ./lib/github/base64
 //= require ./lib/github/octokit
@@ -11,8 +14,6 @@
 //= require ace/mode-javascript
 //= require ace/mode-json
 
-//= require jquery
-//= require jquery_ujs
 //= require_tree ./lib/bootstrap
 //= require_tree ./lib/showdown
 //= require_tree ./lib/misc

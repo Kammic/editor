@@ -1,10 +1,144 @@
+@import 'font-awesome';
+@import url(//fonts.googleapis.com/css?family=Source+Code+Pro:300,400);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
 body {
   overflow: hidden;
 }
 
 #editor, #preview {
   margin: 0;
+}
+
+#editor {
+  height:100%;
+  width: 50%;
+  overflow: auto;
+  position: fixed;
+  top:0;
+  left:0;
+
+  font-size: .85em;
+  line-height: 1.4em;
+  font-family: 'Droid Sans Mono', sans-serif;
+  font-weight:300;
+}
+
+#preview  {
+  overflow: auto;
+  position:absolute;
+
+  top:0;
+  right: 0; 
+
+  padding-left: 1.7em;
+  padding-right: .7em;
+  width:50%;
+  border-left: 1px solid #cfcfcf;
+
+  p {
+    max-width: none;
+  }
+}
+
+#pending {
+
+  button {
+    margin-top: 1em;
+    width:100%;
+  }
+}
+
+#history {
+  .media.odd { background-color: rgb(238, 238, 238); }
+  .media {
+    border-top: 1px solid #dddddd;
+    margin-top: 0;
+    .media-body { margin-top: 2em; }
+    .media-object { margin-top: 3em; }
+    .message { font-weight: bold; }
+    p {
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+#browser {
+  .browser-inner { padding: 0; }
+  .spinner {
+    width: 24px;
+    position: absolute;
+    left: 49%;
+    top: 49%;
+  }
+  a, a:visited, a:hover { color:#0099ff; }
+
+}
+
+.nav-bar {
   position: absolute;
-  top: 0;
   bottom: 0;
+  right: 0;
+  padding:0;
+  margin:0;
+  z-index: 5;
+  background-color: transparent;
+  opacity: 0.5;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+
+  .status {
+    padding: .5em;
+    float: right;
+    .btn {
+      margin:0;
+      .avatar {
+        width: 18px;
+        border-radius: 90em;
+        margin:0;
+        padding:0;
+      }
+    }
+  }
+}
+
+.nav-bar:hover { opacity: 1; }
+#menu-panel {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif;
+  right: 0;
+  width: 25%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  overflow: auto;
+  z-index: 5;  
+  background-color: #fff;
+  padding: 0.2em;
+
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+
+  .menu-header {
+    .nav li { padding: .3em; }
+    .nav li a { padding: .5em; }
+  }
+
+  .file-list {
+    line-height: 1.4;
+    width: 100%;
+
+    td { padding: .3em; }
+    tr {
+        border-bottom: 1px solid #eee;
+        cursor: hand;
+        cursor: pointer;
+    }
+    tr:hover { background-color: #EEE; }
+  }
+
+  #history {
+    img { border-radius: 10em; }
+    .commit { padding: 1em; }
+  }
 }

@@ -25,7 +25,7 @@ EditorController = ["$scope", "$rootScope", "github", "changedFileQueue", "edito
       sender: 'editor|cli',
       passEvent: true,
     },
-    exec: function(){ $scope.$emit('saveFile'); }
+    exec: function(){ $scope.$emit('saveLocalFile'); }
   });
 
   key('command+s, ctrl+s', function(){
