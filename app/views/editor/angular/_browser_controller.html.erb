@@ -41,16 +41,14 @@
               </tr>
             </table>
             <div class="row">
-              <div class="col-lg-12">
-                <div class="input-group">
-                  <input type="text" class="form-control" ng-model='fileName' placeholder='file name'>
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" ng-click="$emit('createFile')">
-                      Create
-                    </button>
-                  </span>
-                </div><!-- /input-group -->
-              </div><!-- /.col-lg-6 -->
+              <div class="small-9 columns">
+                <input type="text" class="form-control" ng-model='fileName' placeholder='file name'>
+              </div>
+              <div class="small-3 columns">
+                <button class="button tiny" type="button" ng-click="$emit('createFile')">
+                  Create
+                </button>
+              </div>
             </div><!-- /.row -->
           </div>
         </div>

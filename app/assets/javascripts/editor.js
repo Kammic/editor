@@ -14,7 +14,8 @@
 //= require ace/mode-javascript
 //= require ace/mode-json
 
-//= require_tree ./lib/bootstrap
+//= require ./lib/foundation/foundation.min
+//= require_tree ./lib/foundation
 //= require_tree ./lib/showdown
 //= require_tree ./lib/misc
 
