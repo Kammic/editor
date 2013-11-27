@@ -8,8 +8,8 @@ describe('service: github', function() {
     $.mockjaxClear();
   });
 
-  var repoName   = 'progit-bana';
   // var auth_token = 'a17157d31accc9155e12f01825c8fc13fbf6137d';
+  var repoName   = 'progit-bana';
   var auth_token  = 'some_auth_token';
   var github_user = 'ortuna';
 
@@ -93,6 +93,26 @@ describe('service: github', function() {
       subject.setRepo(repoName);
       expect(subject.branch).toBeDefined();
     });
+  });
+
+  describe('#currentBranch', function() {
+    beforeEach(function(){
+      $.mockjaxClear();
+      mock_ajax('*/user', {login: github_user, id: '1245'});
+      subject.init(auth_token);
+      waitsFor(function() { return subject.user; }, 'subject init', 500);
+    });
+
+
+    it('returns the current branch object', function(){
+      subject.branch = 'stuff';
+      expect(subject.currentBranch()).toEqual('stuff');
+    });
+
+    it('returns the current branch name via currentBranchName', function() {
+
+    });
+
   });
 
   describe('#getTree', function(){

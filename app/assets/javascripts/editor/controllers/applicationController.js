@@ -6,7 +6,7 @@ ApplicationController = ["$scope", "$rootScope", "github", function($scope, $roo
   });
 
   $rootScope.$on('notify', function(e, message){
-    $.growl({ title: "Growl", message: message});
+    $.growl({title: 'Arturo.io', message: message});
   });
 
   github.init(env.auth_token).then(function() {
